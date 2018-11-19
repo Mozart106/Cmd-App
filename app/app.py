@@ -1,46 +1,6 @@
 
 import datetime
 
-
-'''
-    comments = [
-        {"comment_id": 1, "user_id": 1, "message": "Hi there", "timestamp": "9.00"}
-
-    ]
-
-    def __init__(self, user_id, username, role, login=False, lastLoggedInAt=False)
-    self.user_id = user_id
-    self.username = username
-    self.lastLoggedInAt = lastLoggedInAt
-
-    def comment(self):
-        pass
-
-    def moderator(self):
-        pass
-
-    def admin(self):
-        pass
-
-
-class Comment(object):
-	coments=[]
-
-    def __init__(self, comment_id, user_id, message, timestamp):
-        self.comment_id = comment_id
-        self.user_id = user_id
-        self.message = message
-        self.timetamp = timestamp
-
-
-class Reply(Comment):
-
-    def __init__(self, reply):
-        self.reply = reply
-
-'''
-
-
 class User(object):
     users = [
         {"user_id": 1, "username": "Rachel", "password": "rachel", "login": False,
@@ -94,8 +54,7 @@ class Login(User):
             message = input("Message: ")
 
             payload = {
-                "username": user["username"],
-                #"login": login,
+                "username": user["username"], 
                 "role": user["role"],
                 "timestamp": datetime.datetime.now().timestamp(),
                 "message": message
@@ -120,7 +79,6 @@ class Login(User):
 
             payload = {
                 "username": user["username"],
-                #"login": login,
                 "role": user["role"],
                 "timestamp": datetime.datetime.now().timestamp(),
                 "message": message
@@ -142,9 +100,6 @@ class Login(User):
 
             return "Username or password incorrect"
         return data
-        #com = Comment()
-        # com.create_comment()
-
 
 
 cl = Login()
